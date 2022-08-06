@@ -22,7 +22,7 @@ export const GalleryOverlay: React.FC<{
             className="text-white text-3xl mr-4 absolute left-0 h-[600px] w-12 z-30"
           />
           <Image
-            src={`/gallery/${photos[index]}`}
+            src={photos[index]}
             alt="wedding photo"
             width={390}
             height={600}
