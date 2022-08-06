@@ -9,7 +9,7 @@ export const GalleryOverlay: React.FC<{
   const [index, setIndex] = useState<number>(startIndex);
   return (
     <>
-      <div className="fixed bg-black/50 z-10 inset-0 w-screen h-screen flex justify-center items-center">
+      <div className="fixed bg-black/80 z-10 inset-0 w-screen h-screen flex justify-center items-center">
         <button
           className="text-white font-semibold fixed top-4 right-4 text-xl z-50"
           onClick={() => setOpen(false)}

@@ -30,7 +30,7 @@ export const MainPage = () => {
     <div className="relative bg-stone-50">
       <div className="relative h-screen">
         <Image
-          src="/Main.jpeg"
+          src="/Main.webp"
           layout="fill"
           height={800}
           objectFit="cover"

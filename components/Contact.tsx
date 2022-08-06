@@ -26,7 +26,7 @@ const ContactBrideGroom = () => {
               GROOM
             </p>
             <Image
-              src={`/contact/contact_groom.jpeg`}
+              src={`/contact/contact_groom.webp`}
               alt="groom"
               height={120}
               width={120}
@@ -44,7 +44,7 @@ const ContactBrideGroom = () => {
         <div>
           <div className="flex justify-center items-center">
             <Image
-              src={`/contact/contact_bride.jpeg`}
+              src={`/contact/contact_bride.webp`}
               alt="bride"
               height={120}
               width={120}

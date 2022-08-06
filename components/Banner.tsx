@@ -4,7 +4,7 @@ export const Banner = () => {
   return (
     <div className="relative h-40">
       <Image
-        src="/banner.jpeg"
+        src="/banner.webp"
         alt="banner image"
         objectFit="cover"
         layout="fill"
