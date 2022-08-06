@@ -19,11 +19,13 @@ export const InvitationLetter = () => {
       </p>
       <div className="border-black border-r h-12 my-12" />
       <div>
-        <p>
-          위동섭 • 정봉금 <span className="text-sm mr-2">의 장남</span> 성훈
+        <p className="text-lg">
+          위동섭 • 정봉금 <span className="text-sm mr-2">의 장남</span>
+          <span className="font-bold">성훈</span>
         </p>
-        <p>
-          조종호 • 홍선희 <span className="text-sm mr-2">의 장녀</span> 은비
+        <p className="text-lg">
+          조종호 • 홍선희 <span className="text-sm mr-2">의 장녀</span>
+          <span className="font-bold">은비</span>
         </p>
       </div>
     </div>

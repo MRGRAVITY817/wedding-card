@@ -1,4 +1,6 @@
 import type { NextPage } from "next";
+import { Banner } from "../components/Banner";
+import { Calendar } from "../components/Calendar";
 import { InvitationLetter } from "../components/InvitationLetter";
 import { MainPage } from "../components/MainPage";
 
@@ -8,8 +10,9 @@ const Home: NextPage = () => {
       <MainPage />
       <InvitationLetter />
       {/* <Contact /> */}
-      {/* <Calendar />
-      <Gallery />
+      <Banner />
+      <Calendar />
+      {/* <Gallery />
       <Location />
       <Account />
       <GuestBook />

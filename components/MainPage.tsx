@@ -28,13 +28,15 @@ export const MainPage = () => {
   const [lang, setLang] = useState<"eng" | "kor">("eng");
   return (
     <div className="relative bg-stone-50">
-      <Image
-        src="/Main.jpeg"
-        width={390}
-        height={800}
-        objectFit="cover"
-        alt="환영합니다! Welcome!"
-      />
+      <div className="relative h-screen">
+        <Image
+          src="/Main.jpeg"
+          layout="fill"
+          height={800}
+          objectFit="cover"
+          alt="환영합니다! Welcome!"
+        />
+      </div>
       <div className="absolute top-24 w-full">
         <div className="text-center">
           <h1 className="text-3xl font-semibold">
