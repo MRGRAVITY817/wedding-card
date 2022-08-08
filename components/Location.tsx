@@ -40,8 +40,9 @@ const LocationAddress = () => {
             <p>경기 화성시 정남면 보통내길 205-32</p>
           </div>
           <div
-            className="flex justify-end items-center text-stone-500"
+            className="clip flex justify-end items-center text-stone-500"
             onClick={copyToClipboard}
+            data-clipboard-text={`경기 화성시 정남면 보통내길 205-32`}
           >
             <ClipboardCopyIcon className="w-4 h-4 mr" />
             <p>복사</p>
