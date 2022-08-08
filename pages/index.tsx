@@ -18,7 +18,6 @@ import { ThanksTo } from "../components/ThanksTo";
 const API_KEY = process.env.NEXT_PUBLIC_KAKAO_APIKEY + "";
 // Naver
 const CLIENT_ID = process.env.NEXT_PUBLIC_NAVER_CLIENT_ID;
-const CLIENT_PW = process.env.NEXT_PUBLIC_NAVER_CLIENT_PW;
 const MAP_URL =
   "https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=" +
   CLIENT_ID +

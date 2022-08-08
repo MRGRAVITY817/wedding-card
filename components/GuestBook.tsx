@@ -2,8 +2,32 @@ import Image from "next/image";
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
 import { Modal } from "./Modal";
+import { addMessageRequest, readAllMessagesFetcher } from "../utils/database";
+import useSWR, { Key, useSWRConfig } from "swr";
+
+interface Message {
+  bride_or_groom: "bride" | "groom";
+  sender: string;
+  message: string;
+}
 
 export const GuestBook = () => {
+  const messagesUrl: Key = `/api/guestbook`;
+  const { data: messages, error: messageError } = useSWR<Message[]>(
+    messagesUrl,
+    readAllMessagesFetcher
+  );
+
+  const { mutate } = useSWRConfig();
+
+  const sendMessage = async (message: Message) => {
+    if (typeof messages !== "undefined") {
+      mutate(messagesUrl, [...messages, message], false);
+      await addMessageRequest(messagesUrl, message);
+      mutate(messagesUrl);
+    }
+  };
+
   return (
     <div className="bg-stone-200 py-12 px-8 text-center">
       <h2 className="font-serif text-stone-400">• GUESTBOOK •</h2>
@@ -15,29 +39,36 @@ export const GuestBook = () => {
         </strong>
       </h3>
       <div className="border-t border-stone-700/50 border-dashed w-full my-8" />
-      <GuestBookMarquee />
-      <MessageForm />
+      <GuestBookMarquee messages={messages || []} />
+      <MessageForm sendMessage={sendMessage} />
     </div>
   );
 };
 
-const MessageForm = () => {
+const MessageForm: React.FC<{ sendMessage: (message: Message) => void }> = ({
+  sendMessage,
+}) => {
   const [personType, setPersonType] = useState<"bride" | "groom">("groom");
   const [open, setOpen] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
-
   return (
     <>
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          setOpen(true);
+          sendMessage({
+            bride_or_groom: personType,
+            sender: "Friend",
+            message,
+          });
           setMessage("");
+          setOpen(true);
         }}
         className="mt-8 w-full"
       >
         <div className="flex justify-center items-center gap-2 w-full">
           <button
+            type="button"
             onClick={() => setPersonType("groom")}
             className={`h-12 flex items-center justify-center gap-2 w-full 
          bg-stone-50 border border-stone-800 ${
@@ -54,6 +85,7 @@ const MessageForm = () => {
             <p>신랑에게</p>
           </button>
           <button
+            type="button"
             onClick={() => setPersonType("bride")}
             className={`h-12 flex items-center justify-center gap-2 w-full 
          bg-stone-50 border border-stone-800 ${
@@ -96,33 +128,17 @@ const MessageForm = () => {
   );
 };
 
-const GuestBookMarquee = () => {
+const GuestBookMarquee: React.FC<{ messages: Message[] }> = ({ messages }) => {
   {
     return (
       <Marquee gradient={false} speed={100}>
-        <MarqueeItem personType="bride" message="결혼 축하해 은비!!" />
-        <MarqueeItem
-          personType="groom"
-          message="Merry Wedding! For you and Eunbee also!"
-        />
-        <MarqueeItem
-          personType="bride"
-          message="축하해 언니이이!!! 나도 자주만나줭"
-        />
-        <MarqueeItem personType="groom" message="형님 결혼 축하드려요!!" />
-        <MarqueeItem
-          personType="bride"
-          message="와 조은비가 결혼... 대박적..!"
-        />
-        <MarqueeItem
-          personType="bride"
-          message="너무 예쁘다 :) 행복하게 살아~"
-        />
-        <MarqueeItem
-          personType="groom"
-          message="동탄고 댄싱머신 위성훈 결혼축축"
-        />
-        <MarqueeItem personType="groom" message="멘토님 결혼축하드립니다!" />
+        {messages.map((message, i) => (
+          <MarqueeItem
+            key={`message-${i}`}
+            personType={message.bride_or_groom}
+            message={message.message}
+          />
+        ))}
       </Marquee>
     );
   }
