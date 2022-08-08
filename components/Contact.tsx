@@ -1,6 +1,12 @@
 import Image from "next/image";
 import { PhoneIcon } from "@heroicons/react/solid";
 
+const callPerson = (phoneNumber: string) => {
+  if (typeof window !== "undefined") {
+    window.open(`tel:${phoneNumber}`);
+  }
+};
+
 export const Contact = () => {
   return (
     <div>
@@ -34,7 +40,10 @@ const ContactBrideGroom = () => {
               objectFit="cover"
             />
           </div>
-          <div className="mt-4 flex justify-end items-center mr-4">
+          <div
+            className="mt-4 flex justify-end items-center mr-4"
+            onClick={() => callPerson("01091216750")}
+          >
             <p className="text-stone-500">
               신랑, <strong className="text-stone-900">위성훈</strong>
             </p>
@@ -55,7 +64,10 @@ const ContactBrideGroom = () => {
               BRIDE
             </p>
           </div>
-          <div className="mt-4 flex justify-start items-center ml-4">
+          <div
+            className="mt-4 flex justify-start items-center ml-4"
+            onClick={() => callPerson("01063508550")}
+          >
             <p className="text-stone-500">
               신부, <strong className="text-stone-900">조은비</strong>
             </p>
@@ -76,8 +88,20 @@ const ContactFamily = () => {
         </h3>
       </div>
       <div className="flex justify-around items-center py-12">
-        <FamilyContactItem familyType="신랑" father="위동섭" mother="정봉금" />
-        <FamilyContactItem familyType="신부" father="조종호" mother="홍선희" />
+        <FamilyContactItem
+          familyType="신랑"
+          father="위동섭"
+          mother="정봉금"
+          fatherPhone={"01089637005"}
+          motherPhone={"01023667680"}
+        />
+        <FamilyContactItem
+          familyType="신부"
+          father="조종호"
+          mother="홍선희"
+          fatherPhone={"01033308550"}
+          motherPhone={"01032908550"}
+        />
       </div>
     </>
   );
@@ -87,18 +111,26 @@ const FamilyContactItem: React.FC<{
   familyType: "신랑" | "신부";
   father: string;
   mother: string;
-}> = ({ familyType, father, mother }) => {
+  fatherPhone: string;
+  motherPhone: string;
+}> = ({ familyType, father, mother, fatherPhone, motherPhone }) => {
   return (
     <div className="text-center">
       <h3 className="text-lg font-medium mb-4">{familyType} 측 혼주</h3>
-      <div className="mt-4 flex justify-start items-center ml-4">
+      <div
+        className="mt-4 flex justify-start items-center ml-4"
+        onClick={() => callPerson(fatherPhone)}
+      >
         <p className="text-stone-500">
           {familyType} 부{" "}
           <strong className="text-stone-900 ml-1">{father}</strong>
         </p>
         <PhoneIcon className="w-4 ml-1" />
       </div>
-      <div className="mt-2 flex justify-start items-center ml-4">
+      <div
+        className="mt-2 flex justify-start items-center ml-4"
+        onClick={() => callPerson(motherPhone)}
+      >
         <p className="text-stone-500">
           {familyType} 모{" "}
           <strong className="text-stone-900 ml-1">{mother}</strong>

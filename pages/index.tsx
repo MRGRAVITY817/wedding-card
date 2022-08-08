@@ -30,10 +30,14 @@ const Home: NextPage = () => {
 
   if (naver && naver.maps) {
     const mapOptions = {
-      center: new naver.maps.LatLng(37.19267209999984, 126.96520950000001),
-      zoom: 14,
+      center: new naver.maps.LatLng(37.19267209999984, 126.96940950000001),
+      zoom: 17,
     };
     map = new naver.maps.Map("location-map", mapOptions);
+    const marker = new naver.maps.Marker({
+      position: new naver.maps.LatLng(37.19267209999984, 126.96940950000001),
+      map,
+    });
   }
 
   return (

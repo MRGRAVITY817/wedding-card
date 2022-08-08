@@ -2,6 +2,9 @@ import {
   ClipboardCopyIcon,
   LocationMarkerIcon,
 } from "@heroicons/react/outline";
+import ClipboardJS from "clipboard";
+import { useState } from "react";
+import { Modal } from "./Modal";
 
 export const Location = () => {
   return (
@@ -20,29 +23,43 @@ const Map = () => {
 };
 
 const LocationAddress = () => {
+  if (typeof window !== "undefined") {
+    const _clipboard = new ClipboardJS(".clip");
+  }
+  const [open, setOpen] = useState<boolean>(false);
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(`경기 화성시 정남면 보통내길 205-32`);
+    setOpen(true);
+  };
   return (
-    <div className="mx-4 w-full flex flex-col gap-4 bg-white p-8">
-      <div className="flex justify-between items-center">
-        <div className="flex justify-start items-center">
-          <LocationMarkerIcon className="w-4 h-4 mr-1" />
-          <p>경기 화성시 정남면 보통내길 205-32</p>
+    <>
+      <div className="mx-4 w-full flex flex-col gap-4 bg-white p-8">
+        <div className="flex justify-between items-center">
+          <div className="flex justify-start items-center">
+            <LocationMarkerIcon className="w-4 h-4 mr-1" />
+            <p>경기 화성시 정남면 보통내길 205-32</p>
+          </div>
+          <div
+            className="flex justify-end items-center text-stone-500"
+            onClick={copyToClipboard}
+          >
+            <ClipboardCopyIcon className="w-4 h-4 mr" />
+            <p>복사</p>
+          </div>
         </div>
-        <div className="flex justify-end items-center text-stone-500">
-          <ClipboardCopyIcon className="w-4 h-4 mr" />
-          <p>복사</p>
+        <div className="border-t border-dashed border-stone-400 w-full" />
+        <div className="flex justify-between items-center">
+          <div className="flex justify-start items-center">
+            <LocationMarkerIcon className="w-4 h-4 mr-1" />
+            <p>식장 안내</p>
+          </div>
+          <div className="flex justify-end items-center text-stone-500">
+            <p className="font-medium">희온포레 더 글라스 가든</p>
+          </div>
         </div>
       </div>
-      <div className="border-t border-dashed border-stone-400 w-full" />
-      <div className="flex justify-between items-center">
-        <div className="flex justify-start items-center">
-          <LocationMarkerIcon className="w-4 h-4 mr-1" />
-          <p>식장 안내</p>
-        </div>
-        <div className="flex justify-end items-center text-stone-500">
-          <p className="font-medium">희온포레 더 글라스 가든</p>
-        </div>
-      </div>
-    </div>
+      <Modal message="주소를 복사하였습니다." open={open} setOpen={setOpen} />
+    </>
   );
 };
 
