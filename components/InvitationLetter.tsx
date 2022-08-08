@@ -1,8 +1,8 @@
 export const InvitationLetter = () => {
   return (
-    <div className="text-center py-20 flex flex-col justify-center items-center">
+    <div className="text-center py-20 flex flex-col justify-center items-center font-serif">
       <p className="mb-2">🌼</p>
-      <h2 className="mb-12">초 대 합 니 다</h2>
+      <h2 className="mb-12 font-semibold">초 대 합 니 다</h2>
       <p className="leading-6">
         살랑이는 바람결에
         <br />
@@ -17,14 +17,14 @@ export const InvitationLetter = () => {
         축복해 주시면 감사하겠습니다.
         <br />
       </p>
-      <div className="border-black border-r h-12 my-12" />
-      <div>
+      <div className="border-stone-500/50 border-r h-12 my-12" />
+      <div className="text-stone-800">
         <p className="text-lg">
-          위동섭 • 정봉금 <span className="text-sm mr-2">의 장남</span>
+          위동섭•정봉금 <span className="text-sm mr-2">의 장남</span>
           <span className="font-bold">성훈</span>
         </p>
         <p className="text-lg">
-          조종호 • 홍선희 <span className="text-sm mr-2">의 장녀</span>
+          조종호•홍선희 <span className="text-sm mr-2">의 장녀</span>
           <span className="font-bold">은비</span>
         </p>
       </div>

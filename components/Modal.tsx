@@ -6,7 +6,8 @@ import { CheckIcon } from "@heroicons/react/outline";
 export const Modal: React.FC<{
   setOpen: (open: boolean) => void;
   open: boolean;
-}> = ({ open, setOpen }) => {
+  message: string;
+}> = ({ open, setOpen, message }) => {
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -46,7 +47,7 @@ export const Modal: React.FC<{
                       as="h3"
                       className="text-lg leading-6 font-medium text-gray-900"
                     >
-                      계좌번호가 복사되었습니다.
+                      {message}
                     </Dialog.Title>
                   </div>
                 </div>

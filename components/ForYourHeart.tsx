@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Modal } from "./Modal";
 import ClipboardJS from "clipboard";
+import { useRouter } from "next/router";
 
 export const ForYourHeart = () => {
   return (
@@ -33,18 +34,21 @@ export const ForYourHeart = () => {
             bankAccount: "110-376-835457",
             personType: "신랑",
             personName: "위성훈",
+            kakaoId: "eccwsh817",
           },
           {
-            bankName: "신한은행",
-            bankAccount: "110-376-835457",
-            personType: "신랑",
-            personName: "위성훈",
+            bankName: "국민은행",
+            bankAccount: "670102-96-119344",
+            personType: "신랑 부",
+            personName: "위동섭",
+            kakaoId: "01089637005",
           },
           {
-            bankName: "신한은행",
-            bankAccount: "110-376-835457",
-            personType: "신랑",
-            personName: "위성훈",
+            bankName: "국민은행",
+            bankAccount: "203-24-0815-141",
+            personType: "신랑 모",
+            personName: "정봉금",
+            kakaoId: "kungboo700",
           },
         ]}
       />
@@ -52,10 +56,11 @@ export const ForYourHeart = () => {
         brideOrGroom="신부"
         bankingInfo={[
           {
-            bankName: "신한은행",
-            bankAccount: "110-376-835457",
-            personType: "신랑",
-            personName: "위성훈",
+            bankName: "농협은행",
+            bankAccount: "352-1865-4543-03",
+            personType: "신부",
+            personName: "조은비",
+            kakaoId: "nicevil917",
           },
         ]}
       />
@@ -101,6 +106,7 @@ interface BankAccountProps {
   bankAccount: string;
   personType: string;
   personName: string;
+  kakaoId: string;
 }
 
 const BankAccount: React.FC<BankAccountProps> = ({
@@ -108,32 +114,40 @@ const BankAccount: React.FC<BankAccountProps> = ({
   bankAccount,
   personType,
   personName,
+  kakaoId,
 }) => {
   return (
     <div>
-      <p className="text-center mb-4">
+      <p className="text-center mb-4 text-sm">
         <strong>{bankName}</strong> • {bankAccount} {personType}{" "}
         <strong>{personName}</strong>
       </p>
       <div className="flex justify-center items-center gap-2">
-        <KakaoPayButton />
+        {/* <KakaoPayButton kakaoId={kakaoId} /> */}
         <CopyAddressButton bankName={bankName} bankAccount={bankAccount} />
       </div>
     </div>
   );
 };
 
-const KakaoPayButton = () => {
+const KakaoPayButton: React.FC<{ kakaoId: string }> = ({ kakaoId }) => {
+  const router = useRouter();
+  const sendViaKakaoPay = () => {
+    router.push(`https://qr.kakaopay.com/${kakaoId}`);
+  };
   return (
-    <button className="flex justify-center items-center bg-[#FEDF01] h-8 w-full rounded-xl">
+    <button
+      onClick={sendViaKakaoPay}
+      className="flex justify-center items-center bg-[#FFEB01] h-8 w-full rounded-xl"
+    >
       <Image
-        src="/kakaopay.jpeg"
+        src="/kakaopay.webp"
         alt="kakaopay"
         width={40}
         height={12}
         objectFit="cover"
       />
-      <p className="text-sm">카카오페이 송금</p>
+      <p className="text-xs">카카오페이 송금</p>
     </button>
   );
 };
@@ -152,13 +166,17 @@ const CopyAddressButton: React.FC<{
     <>
       <button
         onClick={copyToClipboard}
-        className="clip flex justify-center items-center bg-white h-8 w-full rounded-xl"
+        className="clip flex justify-center items-center bg-white h-8 w-2/3 rounded-xl"
         data-clipboard-text={`${bankName} ${bankAccount}`}
       >
         <ClipboardCopyIcon className="w-4" />
-        <p className="text-sm ml-2">계좌번호 복사</p>
+        <p className="text-xs ml-2">계좌번호 복사</p>
       </button>
-      <Modal open={open} setOpen={setOpen} />
+      <Modal
+        message="계좌번호가 복사되었습니다."
+        open={open}
+        setOpen={setOpen}
+      />
     </>
   );
 };

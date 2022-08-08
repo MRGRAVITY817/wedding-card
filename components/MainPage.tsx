@@ -25,9 +25,9 @@ const texts = {
 };
 
 export const MainPage = () => {
-  const [lang, setLang] = useState<"eng" | "kor">("eng");
+  const [lang, setLang] = useState<"eng" | "kor">("kor");
   return (
-    <div className="relative bg-stone-50">
+    <div className="relative">
       <div className="relative h-screen">
         <Image
           src="/Main.webp"
@@ -37,8 +37,9 @@ export const MainPage = () => {
           alt="환영합니다! Welcome!"
         />
       </div>
-      <div className="absolute top-24 w-full">
-        <div className="text-center">
+      <div className="absolute top-0 h-1/2 w-full bg-gradient-to-b from-black/70 to-white/0" />
+      <div className="absolute top-24 w-full font-serif">
+        <div className="text-center text-white">
           <h1 className="text-3xl font-semibold">
             {texts.hoon[lang]}
             <span className="text-xl mx-2">{texts.and[lang]}</span>
