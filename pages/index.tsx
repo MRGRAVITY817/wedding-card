@@ -72,7 +72,7 @@ const Home: NextPage = () => {
 export default Home;
 
 const Jukebox = () => {
-  const [playing, setPlaying] = useState<boolean>(false);
+  const [playing, setPlaying] = useState<boolean>(true);
   const [music] = useState<HTMLAudioElement | null>(
     typeof Audio !== "undefined" ? new Audio("/bgmusic.mp3") : null
   );
