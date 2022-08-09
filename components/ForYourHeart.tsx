@@ -15,9 +15,9 @@ export const ForYourHeart = () => {
       <h2 className="font-serif text-stone-500 text-xs tracking-widest">
         ⋄ FOR YOUR HEART ⋄
       </h2>
-      <h3 className="mt-4 text-xl">마음 전하실 곳</h3>
+      <h3 className="mt-4 text-xl font-serif">마음 전하실 곳</h3>
       <div className="border-t border-dashed border-stone-300 w-3/4 my-8" />
-      <p className="text-center font-light mb-8">
+      <p className="text-center mb-8">
         코로나가 지속되는 중 진행하는 예식이
         <br />
         혹여 부담으로 전해지지는 않을까 마음이

@@ -1,7 +1,17 @@
+import Image from "next/image";
+
 export const InvitationLetter = () => {
   return (
-    <div className="text-center py-20 flex flex-col justify-center items-center font-serif">
-      <p className="mb-2">🌼</p>
+    <div className="text-center py-16 flex flex-col justify-center items-center font-serif">
+      <div className="mb-4 rotate-[50deg]">
+        <Image
+          src="/flowers/zero_dark.png"
+          alt="letter flower"
+          height={50}
+          width={30}
+          className="opacity-70"
+        />
+      </div>
       <h2 className="mb-12 font-semibold">초 대 합 니 다</h2>
       <p className="leading-6">
         살랑이는 바람결에

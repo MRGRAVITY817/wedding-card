@@ -12,7 +12,9 @@ export const Location = () => {
       <h2 className="font-serif text-stone-500 text-xs tracking-widest">
         ⋄ LOCATION ⋄
       </h2>
-      <h3 className="mt-4 text-xl">찾아오시는 길을 안내합니다.</h3>
+      <h3 className="mt-4 text-xl font-serif font-medium">
+        찾아오시는 길을 안내합니다.
+      </h3>
       <Map />
       <LocationAddress />
       <Transportation />

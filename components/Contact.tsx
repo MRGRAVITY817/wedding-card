@@ -22,7 +22,7 @@ const ContactBrideGroom = () => {
       <h2 className="font-serif text-stone-500 text-xs tracking-widest">
         ⋄ CONTACT ⋄
       </h2>
-      <h3 className="mt-4 text-xl">
+      <h3 className="mt-4 text-xl font-serif">
         축하의 마음을 전화로
         <br />
         전해보세요.
