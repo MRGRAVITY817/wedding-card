@@ -20,7 +20,7 @@ export const Contact = () => {
 const texts = {
   description1: {
     ko: "축하의 마음을 전화로",
-    en: "Celebrate us",
+    en: "Send you warm celebration",
   },
   description2: {
     ko: "전해보세요.",
