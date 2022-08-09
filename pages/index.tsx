@@ -25,7 +25,7 @@ const Home: NextPage = () => {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
       </Head>
-      <KakaoMessageScript />
+      {/* <KakaoMessageScript /> */}
       <NaverMapScript />
       <div className="bg-stone-50 text-stone-800">
         <Jukebox />
