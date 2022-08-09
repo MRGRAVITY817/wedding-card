@@ -74,14 +74,14 @@ const texts = {
   },
   p2: {
     ko: "사랑이 묻어나는 계절입니다.",
-    en: "followed by an October breeze.",
+    en: "with the perfect autumn breeze.",
   },
   p3: {
     ko: "여기 곱고 예쁜 두 사람이 사랑을 맺어",
     en: "Here we have two loving people",
   },
   p4: {
-    ko: "인생의 반려자가 되려 합니다",
+    ko: "인생의 반려자가 되려 합니다.",
     en: "promised to be the partner of other's life.",
   },
   p5: {
