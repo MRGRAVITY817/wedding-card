@@ -12,6 +12,7 @@ export const MainPage = () => {
           height={800}
           objectFit="cover"
           alt="환영합니다! Welcome!"
+          priority
         />
       </div>
       <div className="absolute top-0 h-1/2 w-full bg-gradient-to-b from-black/70 to-white/0" />

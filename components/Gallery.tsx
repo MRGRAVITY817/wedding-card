@@ -25,6 +25,7 @@ export const Gallery = () => {
                 setOpen(true);
                 setIndex(i);
               }}
+              priority
             />
           ))}
           {more &&
@@ -40,6 +41,7 @@ export const Gallery = () => {
                   setOpen(true);
                   setIndex(i + 9);
                 }}
+                priority
               />
             ))}
         </div>

@@ -9,6 +9,7 @@ export const Banner = () => {
         objectFit="cover"
         layout="fill"
         objectPosition="top"
+        priority
       />
     </div>
   );
