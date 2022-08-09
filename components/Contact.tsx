@@ -19,7 +19,9 @@ export const Contact = () => {
 const ContactBrideGroom = () => {
   return (
     <div className="text-center py-12">
-      <h2 className="font-serif text-stone-500">• CONTACT •</h2>
+      <h2 className="font-serif text-stone-500 text-xs tracking-widest">
+        ⋄ CONTACT ⋄
+      </h2>
       <h3 className="mt-4 text-xl">
         축하의 마음을 전화로
         <br />

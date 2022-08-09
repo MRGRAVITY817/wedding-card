@@ -12,7 +12,9 @@ import { useRouter } from "next/router";
 export const ForYourHeart = () => {
   return (
     <div className="flex flex-col justify-center items-center py-12 px-6 bg-banner-50/25">
-      <h2 className="font-serif text-stone-500">• FOR YOUR HEART •</h2>
+      <h2 className="font-serif text-stone-500 text-xs tracking-widest">
+        ⋄ FOR YOUR HEART ⋄
+      </h2>
       <h3 className="mt-4 text-xl">마음 전하실 곳</h3>
       <div className="border-t border-dashed border-stone-300 w-3/4 my-8" />
       <p className="text-center font-light mb-8">

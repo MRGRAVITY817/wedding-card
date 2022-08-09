@@ -9,7 +9,9 @@ export const Gallery = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center py-12 px-6 bg-banner-50/25">
-        <h2 className="font-serif text-stone-400">• GALLERY •</h2>
+        <h2 className="font-serif text-stone-400 text-xs tracking-widest">
+          ⋄ GALLERY ⋄
+        </h2>
         <div className="grid grid-cols-3 w-full gap-1 mt-12">
           {photos.slice(0, 9).map((photo, i) => (
             <Image

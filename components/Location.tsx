@@ -9,7 +9,9 @@ import { Modal } from "./Modal";
 export const Location = () => {
   return (
     <div className="flex flex-col justify-center items-center py-12">
-      <h2 className="font-serif text-stone-500">• LOCATION •</h2>
+      <h2 className="font-serif text-stone-500 text-xs tracking-widest">
+        ⋄ LOCATION ⋄
+      </h2>
       <h3 className="mt-4 text-xl">찾아오시는 길을 안내합니다.</h3>
       <Map />
       <LocationAddress />
@@ -33,7 +35,7 @@ const LocationAddress = () => {
   };
   return (
     <>
-      <div className="mx-4 w-full flex flex-col gap-4 bg-white p-8">
+      <div className="mx-4 w-full flex flex-col gap-4 bg-white p-8 text-sm">
         <div className="flex justify-between items-center">
           <div className="flex justify-start items-center">
             <LocationMarkerIcon className="w-4 h-4 mr-1" />

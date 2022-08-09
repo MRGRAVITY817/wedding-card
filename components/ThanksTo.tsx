@@ -1,7 +1,9 @@
 export const ThanksTo = () => {
   return (
     <div className="bg-stone-800 py-16 px-8 text-center">
-      <h2 className="font-serif text-stone-400">• THANKS TO •</h2>
+      <h2 className="font-serif text-stone-400 text-xs tracking-widest">
+        ⋄ THANKS TO ⋄
+      </h2>
       <h3 className="mt-4 text-xl text-stone-200 font-serif">
         감사의 마음을 전합니다.
       </h3>

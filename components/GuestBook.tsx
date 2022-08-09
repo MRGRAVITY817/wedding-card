@@ -30,8 +30,10 @@ export const GuestBook = () => {
 
   return (
     <div className="bg-stone-200 py-12 px-8 text-center">
-      <h2 className="font-serif text-stone-400">• GUESTBOOK •</h2>
-      <h3 className="mt-4 text-xl text-stone-700">
+      <h2 className="font-serif text-stone-400 text-xs tracking-widest">
+        ⋄ GUESTBOOK ⋄
+      </h2>
+      <h3 className="font-serif mt-4 text-xl text-stone-700">
         따뜻한 축하의 마음을
         <br />
         <strong className="font-medium text-stone-800">
