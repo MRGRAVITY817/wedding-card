@@ -10,6 +10,9 @@ module.exports = {
     extend: {
       fontFamily: {
         serif: ["Nanum Myeongjo", ...fontFamily.serif],
+        lim: ["Lim", "sans-serif"],
+        gabia: ["Gabia", "sans-serif"],
+        dalseo: ["Dalseo", "sans-serif"],
       },
       colors: {
         banner: {

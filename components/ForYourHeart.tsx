@@ -30,21 +30,21 @@ export const ForYourHeart = () => {
         brideOrGroom="신랑"
         bankingInfo={[
           {
-            bankName: "신한은행",
+            bankName: "신한",
             bankAccount: "110-376-835457",
             personType: "신랑",
             personName: "위성훈",
             kakaoId: "eccwsh817",
           },
           {
-            bankName: "국민은행",
+            bankName: "국민",
             bankAccount: "670102-96-119344",
             personType: "신랑 부",
             personName: "위동섭",
             kakaoId: "01089637005",
           },
           {
-            bankName: "국민은행",
+            bankName: "국민",
             bankAccount: "203-24-0815-141",
             personType: "신랑 모",
             personName: "정봉금",
@@ -56,7 +56,7 @@ export const ForYourHeart = () => {
         brideOrGroom="신부"
         bankingInfo={[
           {
-            bankName: "농협은행",
+            bankName: "농협",
             bankAccount: "352-1865-4543-03",
             personType: "신부",
             personName: "조은비",

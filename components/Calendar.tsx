@@ -5,7 +5,7 @@ export const Calendar = () => {
   ];
   const weekdays = ["S", "M", "T", "W", "T", "F", "S"];
   return (
-    <div className="py-12 px-8 text-center">
+    <div className="py-12 px-8 text-center font-serif">
       <div className="px-4">
         <h1 className="text-4xl mb-6 text-yellow-800 font-bold">10</h1>
         <div className="grid grid-cols-7 gap-2 mb-6 text-yellow-800">
