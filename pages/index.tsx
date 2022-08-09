@@ -55,9 +55,9 @@ const SwitchLanguage = () => {
   return (
     <button
       onClick={() => setLang(lang === "ko" ? "en" : "ko")}
-      className="fixed top-4 right-4 z-50 w-8 h-8 p-1 border-2 border-white shadow-xl rounded-full"
+      className="fixed top-16 left-4 z-50 w-8 h-8 p-1 border-2 border-stone-300 shadow-xl rounded-full"
     >
-      <GlobeAltIcon className="text-white" />
+      <GlobeAltIcon className="text-stone-300" />
     </button>
   );
 };
@@ -79,12 +79,12 @@ const Jukebox = () => {
   };
   return (
     <button
-      className={`fixed top-4 left-4 z-50 w-8 h-8 p-1 border-2 border-white shadow-xl rounded-full ${
+      className={`fixed top-4 left-4 z-50 w-8 h-8 p-1 border-2 border-stone-300 shadow-xl rounded-full ${
         playing ? `opacity-100` : `opacity-40`
       }`}
     >
       <MusicNoteIcon
-        className={`text-white transition-all`}
+        className={`text-stone-300 transition-all`}
         onClick={toggleMusic}
       />
     </button>
