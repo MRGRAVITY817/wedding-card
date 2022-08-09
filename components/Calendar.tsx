@@ -1,4 +1,7 @@
+import { useLanguage } from "../hooks/useLanguage";
+
 export const Calendar = () => {
+  const { lang } = useLanguage();
   const days = [
     2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
     23, 24, 25, 26, 27, 28, 29, 30, 31,
@@ -27,11 +30,20 @@ export const Calendar = () => {
         </div>
       </div>
       <div className="bg-yellow-400/20 mt-12 py-4">
-        <p className="text-sm text-stone-500">
-          2022년 10월 1일 토요일, 오전 11시
-        </p>
-        <p className="font-light text-lg">화성시 희온포레 더 글라스가든</p>
+        <p className="text-sm text-stone-500">{texts.date[lang]}</p>
+        <p className="font-light text-lg">{texts.location[lang]}</p>
       </div>
     </div>
   );
+};
+
+const texts = {
+  date: {
+    ko: "2022년 10월 1일 토요일, 오전 11시",
+    en: "11 a.m., October 1st, 2022",
+  },
+  location: {
+    ko: "화성시 희온포레 더 글라스가든",
+    en: "Heeon Foret The Glass Garden",
+  },
 };

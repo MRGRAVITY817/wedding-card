@@ -1,11 +1,13 @@
 import Image from "next/image";
 import { useState } from "react";
+import { useLanguage } from "../hooks/useLanguage";
 import { GalleryOverlay } from "./GalleryOverlay";
 
 export const Gallery = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [index, setIndex] = useState<number>(-1);
   const [more, setMore] = useState<boolean>(false);
+  const { lang } = useLanguage();
   return (
     <>
       <div className="flex flex-col justify-center items-center py-12 px-6 bg-banner-50/25">
@@ -46,15 +48,26 @@ export const Gallery = () => {
             ))}
         </div>
         <button
-          className="border-2 border-stone-500 text-stone-500 font-medium w-full py-4 mt-4"
+          className="font-serif font-semibold border border-stone-500 text-stone-500 w-full py-4 mt-4"
           onClick={() => setMore(!more)}
         >
-          {more ? "접기" : "더보기"}
+          {more ? texts.fold[lang] : texts.expand[lang]}
         </button>
       </div>
       {open && <GalleryOverlay startIndex={index} setOpen={setOpen} />}
     </>
   );
+};
+
+const texts = {
+  expand: {
+    ko: "더보기",
+    en: "Expand",
+  },
+  fold: {
+    ko: "접기",
+    en: "Fold",
+  },
 };
 
 export const photos = [

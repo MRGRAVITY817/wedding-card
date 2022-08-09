@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PhoneIcon } from "@heroicons/react/solid";
+import { useLanguage } from "../hooks/useLanguage";
 
 const callPerson = (phoneNumber: string) => {
   if (typeof window !== "undefined") {
@@ -16,16 +17,60 @@ export const Contact = () => {
   );
 };
 
+const texts = {
+  description1: {
+    ko: "축하의 마음을 전화로",
+    en: "Celebrate us",
+  },
+  description2: {
+    ko: "전해보세요.",
+    en: "via phone call.",
+  },
+  groom: {
+    ko: "신랑",
+    en: "Groom",
+  },
+  hoon: {
+    ko: "위성훈",
+    en: "SeongHoon Wee",
+  },
+  bride: {
+    ko: "신부",
+    en: "Bride",
+  },
+  eunbee: {
+    ko: "조은비",
+    en: "Eunbee Cho",
+  },
+  dongsub: {
+    ko: "위동섭",
+    en: "DongSub Wee",
+  },
+  bongkeum: {
+    ko: "정봉금",
+    en: "BongKeum Jeong",
+  },
+  jongho: {
+    ko: "조종호",
+    en: "JongHo Cho",
+  },
+  sunhee: {
+    ko: "홍선희",
+    en: "SunHee Hong",
+  },
+};
+
 const ContactBrideGroom = () => {
+  const { lang } = useLanguage();
   return (
     <div className="text-center py-12">
       <h2 className="font-serif text-stone-500 text-xs tracking-widest">
         ⋄ CONTACT ⋄
       </h2>
       <h3 className="mt-4 text-xl font-serif">
-        축하의 마음을 전화로
+        {texts.description1[lang]}
         <br />
-        전해보세요.
+        {texts.description2[lang]}
       </h3>
       <div className="flex flex-row justify-center items-center mt-8 gap-6">
         <div>

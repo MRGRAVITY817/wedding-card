@@ -1,3 +1,4 @@
+import { GlobeAltIcon } from "@heroicons/react/outline";
 import { MusicNoteIcon } from "@heroicons/react/solid";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -14,6 +15,7 @@ import { Location } from "../components/Location";
 import { MainPage } from "../components/MainPage";
 import { NaverMapScript } from "../components/NaverMap.Script";
 import { ThanksTo } from "../components/ThanksTo";
+import { useLanguage } from "../hooks/useLanguage";
 
 const Home: NextPage = () => {
   return (
@@ -28,6 +30,7 @@ const Home: NextPage = () => {
       {/* <KakaoMessageScript /> */}
       <NaverMapScript />
       <div className="bg-stone-50 text-stone-800">
+        <SwitchLanguage />
         <Jukebox />
         <MainPage />
         <InvitationLetter />
@@ -46,6 +49,18 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+const SwitchLanguage = () => {
+  const { lang, setLang } = useLanguage();
+  return (
+    <button
+      onClick={() => setLang(lang === "ko" ? "en" : "ko")}
+      className="fixed top-4 right-4 z-50 w-8 h-8 p-1 border-2 border-white shadow-xl rounded-full"
+    >
+      <GlobeAltIcon className="text-white" />
+    </button>
+  );
+};
 
 const Jukebox = () => {
   const [playing, setPlaying] = useState<boolean>(true);
