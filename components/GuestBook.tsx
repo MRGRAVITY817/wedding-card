@@ -131,7 +131,7 @@ const MessageForm: React.FC<{ sendMessage: (message: Message) => void }> = ({
 const GuestBookMarquee: React.FC<{ messages: Message[] }> = ({ messages }) => {
   {
     return (
-      <Marquee gradient={false} speed={100}>
+      <Marquee gradient={false} speed={50}>
         {messages.map((message, i) => (
           <MarqueeItem
             key={`message-${i}`}
