@@ -34,10 +34,16 @@ export const InvitationLetter = () => {
       <div className="border-stone-500/50 border-r h-12 my-12" />
       <div className="text-stone-800">
         {lang === "ko" ? (
-          <p className="text-lg">
-            위동섭•정봉금 <span className="text-sm mr-2">의 장남</span>
-            <span className="font-bold">성훈</span>
-          </p>
+          <>
+            <p className="text-lg">
+              위동섭•정봉금 <span className="text-sm mr-2">의 장남</span>
+              <span className="font-bold">성훈</span>
+            </p>
+            <p className="text-lg mt-2">
+              조종호•홍선희 <span className="text-sm mr-2">의 장녀</span>
+              <span className="font-bold">은비</span>
+            </p>
+          </>
         ) : (
           <div>
             <div className="flex justify-center items-center gap-2">

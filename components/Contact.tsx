@@ -85,6 +85,7 @@ const ContactBrideGroom = () => {
               width={120}
               className="rounded-full"
               objectFit="cover"
+              priority
             />
           </div>
           <div
@@ -106,6 +107,7 @@ const ContactBrideGroom = () => {
               width={120}
               className="rounded-full"
               objectFit="cover"
+              priority
             />
             <p className="font-serif text-sm text-stone-500 -rotate-90">
               BRIDE
