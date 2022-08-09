@@ -128,11 +128,7 @@ const MessageForm: React.FC<{ sendMessage: (message: Message) => void }> = ({
           </button>
         </div>
       </form>
-      <Modal
-        message="축하메시지가 전송되었습니다."
-        open={open}
-        setOpen={setOpen}
-      />
+      <Modal message={texts.modalMessage[lang]} open={open} setOpen={setOpen} />
     </>
   );
 };
@@ -195,5 +191,9 @@ const texts = {
   placeholder: {
     ko: "축하메시지를 입력해주세요. (최대 40자)",
     en: "Send the message. (max 40 chars)",
+  },
+  modalMessage: {
+    ko: "축하메시지가 전송되었습니다.",
+    en: "Message sent successfully.",
   },
 };

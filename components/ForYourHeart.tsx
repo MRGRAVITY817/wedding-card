@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Modal } from "./Modal";
 import ClipboardJS from "clipboard";
 import { useRouter } from "next/router";
+import { useLanguage } from "../hooks/useLanguage";
 
 export const ForYourHeart = () => {
   return (
@@ -159,6 +160,7 @@ const CopyAddressButton: React.FC<{
   bankAccount: string;
 }> = ({ bankName, bankAccount }) => {
   const _clipboard = new ClipboardJS(".clip");
+  const { lang } = useLanguage();
   const [open, setOpen] = useState<boolean>(false);
   const copyToClipboard = () => {
     navigator.clipboard.writeText(`${bankName} ${bankAccount}`);
@@ -174,11 +176,14 @@ const CopyAddressButton: React.FC<{
         <ClipboardCopyIcon className="w-4" />
         <p className="text-xs ml-2">계좌번호 복사</p>
       </button>
-      <Modal
-        message="계좌번호가 복사되었습니다."
-        open={open}
-        setOpen={setOpen}
-      />
+      <Modal message={texts.modalMessage[lang]} open={open} setOpen={setOpen} />
     </>
   );
+};
+
+const texts = {
+  modalMessage: {
+    ko: "계좌번호가 복사되었습니다.",
+    en: "Copied bank account number.",
+  },
 };

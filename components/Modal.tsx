@@ -2,12 +2,14 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/outline";
+import { useLanguage } from "../hooks/useLanguage";
 
 export const Modal: React.FC<{
   setOpen: (open: boolean) => void;
   open: boolean;
   message: string;
 }> = ({ open, setOpen, message }) => {
+  const { lang } = useLanguage();
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -57,7 +59,7 @@ export const Modal: React.FC<{
                     className="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
                     onClick={() => setOpen(false)}
                   >
-                    확인
+                    {lang === "ko" ? "확인" : "Ok"}
                   </button>
                 </div>
               </Dialog.Panel>
