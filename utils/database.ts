@@ -13,3 +13,6 @@ export const readAllMessagesFetcher = (url: string) =>
 
 export const addMessageRequest = (url: string, message: any) =>
   axios.post(url, { message }).then((res) => res.data);
+
+export const deleteMessageRequest = (url: string, messageId: string) =>
+  axios.delete(`${url}?message_id=${messageId}`).then((res) => res.data);
